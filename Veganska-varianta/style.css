@@ -1,40 +1,151 @@
-/* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
-
-
-/* -------------------------------------------------- */
-
-/*
-pouzivame mobile first pristup
-tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni (telefony)
-s pribyvajici sirkou pridavame media query pro...
-tablety:
-@media (min-width: 480px) {
+html {
+  box-sizing: border-box;
 }
-notebook/pc:
-@media (min-width: 860px) {
+*,
+:after,
+:before {
+  box-sizing: inherit;
 }
-*/
-
 
 body {
-    margin: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
 }
 
 .paticka {
-    text-align: center;
-    font-size: 14px;
-    color: silver;
+  text-align: center;
+  font-size: 14px;
+  color: silver;
 }
 
 .paticka a {
-    color: silver;
+  color: silver;
 }
 
+#recipe_1 h1 {
+  font-weight: 28px;
+  font-size: 28px;
+}
 
-/* ------------------------------- */
-/* ----- DOLE BUDE TVOJE CSS ----- */
-/* ------------------------------- */
+.small_recipes h1 {
+  font-weight: 800px;
+  font-size: 18px;
+}
 
+#recipe_1 {
+  background-image: url("images/salat.jpg");
+
+  min-height: 200px;
+}
+
+.small_recipes {
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe {
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: gray;
+  filter: brightness(0.8);
+}
+
+.text {
+  display: flex;
+  justify-content: space-between;
+  text-shadow: 0px 0px 10px black, 0px 0px 10px black;
+}
+
+#recipe_2 {
+  background-image: url("images/chlebicek.jpg");
+}
+
+#recipe_3 {
+  background-image: url("images/tacos.jpg");
+}
+
+#recipe_4 {
+  background-image: url("images/cizrna.jpg");
+}
+
+#recipe_5 {
+  background-image: url("images/burger.jpg");
+}
+
+/* .darken {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+} */
+
+@media screen and (min-width: 480px) and (max-width: 859px) {
+  .small_recipes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 150px;
+  }
+  .small {
+    flex-basis: 50%;
+  }
+
+  #recipe_1 h1 {
+    font-size: 36px;
+  }
+
+  .small_recipes h1 {
+    font-size: 22px;
+  }
+
+  #recipe_1 {
+    min-height: 250px;
+  }
+
+  .recipe {
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .small_recipes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 200px;
+    align-content: center;
+  }
+  .small {
+    flex-basis: 50%;
+  }
+
+  #recipe_1 h1 {
+    font-size: 48px;
+  }
+
+  .small_recipes h1 {
+    font-size: 28px;
+  }
+
+  #recipe_1 {
+    min-width: 400px;
+  }
+
+  .recipe {
+    padding: 20px;
+  }
+}
